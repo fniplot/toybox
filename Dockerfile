@@ -11,4 +11,6 @@ RUN yum update -y && yum install -y \
     npm install -g yarn && \
     yarn global add @vue/cli
 
-WORKDIR /app
+WORKDIR /app/app
+
+ENTRYPOINT [ "yarn", "run", "serve" ]
