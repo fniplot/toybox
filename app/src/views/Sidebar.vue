@@ -13,7 +13,6 @@
           id="account-button"
           button
           v-b-toggle.account-collapse
-          style="text-align: left"
           class="d-flex justify-content-between align-items-center"
         >
           <div><b-icon icon="person-fill" class="mr-2"></b-icon>Account</div>
@@ -21,15 +20,17 @@
           <b-icon class="when-closed" icon="caret-down-fill"></b-icon>
         </b-list-group-item>
         <b-collapse id="account-collapse">
-          <b-list-group-item button id="account-list"
-            ><span>AAA</span></b-list-group-item
-          >
-          <b-list-group-item button id="account-list"
-            ><span>BBB</span></b-list-group-item
-          >
-          <b-list-group-item button id="account-list"
-            ><span>CCC</span></b-list-group-item
-          >
+          <b-list-group flush>
+            <b-list-group-item button id="account-list"
+              ><span>AAA</span></b-list-group-item
+            >
+            <b-list-group-item button id="account-list"
+              ><span>BBB</span></b-list-group-item
+            >
+            <b-list-group-item button id="account-list"
+              ><span>CCC</span></b-list-group-item
+            >
+          </b-list-group>
         </b-collapse>
       </b-list-group>
     </b-sidebar>
@@ -47,19 +48,18 @@ export default {
 .not-collapsed > .when-closed {
   display: none;
 }
-#account-collapse {
+#account-collapse,
+#account-button {
   text-align: left;
-}
-
-#account-button:hover {
-  background-color: red;
 }
 
 #account-list {
   text-indent: 2em;
 }
 
-#account-list:hover {
-  background-color: red;
+#account-list:hover,
+#account-button:hover {
+  outline: 0;
+  background-color: blue;
 }
 </style>
